@@ -19,7 +19,6 @@ const authLimiter = rateLimit({
   legacyHeaders: false
 });
 
-// Apply rate limiting to login requests
 router.use('/login', authLimiter);
 
 // Routes

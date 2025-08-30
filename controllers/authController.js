@@ -25,7 +25,6 @@ export const login = async (req, res) => {
   try {
     const { username, password } = req.body;
     
-    // Find user by username
     const user = await User.findOne({ 
       username: username.toLowerCase(),
       isActive: true 
@@ -38,7 +37,6 @@ export const login = async (req, res) => {
       });
     }
     
-    // Check password
     const isPasswordValid = await user.comparePassword(password);
     
     if (!isPasswordValid) {
