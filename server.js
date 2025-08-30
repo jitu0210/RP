@@ -1,11 +1,17 @@
 import express from 'express';
 import helmet from 'helmet';
+import cors from "cors"
 import connectDB from './config/database.js';
 import config from './config/env.config.js';
 import authRoutes from './routes/auth.js';
 import { initializeUsers } from './controllers/authController.js';
 
 const app = express();
+
+app.use(cors({
+  origin:'http://localhost:5173',
+  credentials: true
+}))
 
 // Security middleware
 app.use(helmet());
