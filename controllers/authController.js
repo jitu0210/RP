@@ -15,7 +15,7 @@ export const initializeUsers = async () => {
       }
     }
     
-    console.log('User initialization completed');
+    // console.log('User initialization completed');
   } catch (error) {
     console.error('Error initializing users:', error.message);
   }
