@@ -5,7 +5,9 @@ import connectDB from './config/database.js';
 import config from './config/env.config.js';
 import authRoutes from './routes/auth.js';
 import analogRoutes from "./routes/analogRoutes.js"
+import eventsRoutes from "./routes/eventsRoutes.js";
 import { initializeUsers } from './controllers/authController.js';
+
 
 const app = express();
 
@@ -27,6 +29,7 @@ initializeUsers();
 
 app.use('/api/auth', authRoutes);
 app.use('/api/analog', analogRoutes);
+app.use("/api/events", eventsRoutes);
 
 
 const PORT = config.port;
